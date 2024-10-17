@@ -14,14 +14,14 @@ app.use(bodyParser.json());
 app.use("/api/auth", authRoutes);
 
 mongoose
-  .connect("mongodb://localhost:27017/patient-dashboard")
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
 app.use("/api/patients", patientRoutes);
 app.use("/api/authorizations", authorizationRoutes);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
