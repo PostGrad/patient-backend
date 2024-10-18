@@ -13,6 +13,7 @@ app.use(
   cors({
     origin: process.env.CLIENT_URL,
     credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 app.use(bodyParser.json());
