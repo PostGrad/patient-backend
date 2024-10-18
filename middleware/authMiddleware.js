@@ -3,10 +3,10 @@ const JWT_SECRET = process.env.JWT_SECRET;
 
 const authMiddleware = (req, res, next) => {
   // const token = req.header("Authorization");
-  console.log("headers => ", req.headers);
+  // console.log("headers => ", req.headers);
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];
-  console.log("received token => ", token);
+  // console.log("received token => ", token);
   if (!token) {
     return res.status(401).json({ error: "No token, authorization denied" });
   }

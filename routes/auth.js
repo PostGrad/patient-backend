@@ -47,7 +47,7 @@ router.post("/login", async (req, res) => {
       email: provider.email,
     };
     const token = jwt.sign(payload, JWT_SECRET, { expiresIn: "1h" });
-    console.log("generated token after login => ", token);
+    // console.log("generated token after login => ", token);
     res.json({ token });
   } catch (err) {
     res.status(500).json({ error: "Server error" });
