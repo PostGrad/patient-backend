@@ -3,6 +3,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 
 const authMiddleware = (req, res, next) => {
   // const token = req.header("Authorization");
+  console.log("headers => ", req.headers);
   const authHeader = req.headers["Authorization"];
   const token = authHeader && authHeader.split(" ")[1];
   console.log("received token => ", token);
