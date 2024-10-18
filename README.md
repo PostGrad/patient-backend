@@ -48,7 +48,7 @@ Make sure you have the following installed on your local machine:
 PORT = 
 MONGODB_URI = 
 JWT_SECRET = 
-
+CLIENT_URL = 
 ```
 
 ### Tech Stack
